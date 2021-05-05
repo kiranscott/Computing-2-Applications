@@ -14,8 +14,14 @@ const Exam = Object.create(null);
 //    for example:
 //      an input list of [1,2,3,4,5,6,7,8]
 //      returns [1,4,7]
-Exam.every_third = function () {
-    return;
+Exam.every_third = function (array) {
+    var arrayRes = [];
+
+    for (var i = 0; i < array.length; i += 3) {
+        arrayRes.push(array[i]);
+    }
+
+    return arrayRes;
 };
 
 
@@ -29,8 +35,14 @@ Exam.every_third = function () {
 //       the input sentences "the cow jumped over the moon" and
 //                            "jack and jill went up the"
 //       returns "the jack cow and jumped jill over went the up moon the"
-Exam.merge_sentences = function () {
-    return;
+Exam.merge_sentences = function (String1, String2) {
+    const Array1 = String1.split(" "),
+        Array2 = String2.split(" ");
+        
+    if (Array1.length !== Array2.length) {
+        throw "ValueError";
+    } 
+    return Array1.flatMap((v, k) => [v, Array2[k]]).join(" ");
 };
 
 // Write a function that returns the number of lowercase letters in
@@ -38,8 +50,14 @@ Exam.merge_sentences = function () {
 //     for example:
 //          the input "sPonGe bOb"
 //          returns 6
-Exam.lowercase_count = function () {
-    return;
+Exam.lowercase_count = function (Sentence) {
+    var res = 0;
+    for (var i = 0; i < Sentence.length; i += 1 ) {
+        if (Sentence.charAt(i) == Sentence.charAt(i).toLowerCase()) {
+            res += 1 ;
+        }
+    }
+    return res;
 };
 
 
@@ -47,14 +65,25 @@ Exam.lowercase_count = function () {
 
 // Write a function that returns the longest a key in the input object
 // whose keys are all strings.
-Exam.longest_key = function () {
-    return;
+Exam.longest_key = function (Obj) {
+    const keyArray = Object.keys(Obj);
+    const sortedArray = keyArray.sort((a,b) => a.length - b.length);
+    return sortedArray[sortedArray.length -1];
 };
 
 // Write a function that returns the largest value that is an even value in the
 // input dictionary whose values are all whole numbers.
-Exam.value_greatest_even = function () {
-    return;
+Exam.value_greatest_even = function (Obj) {
+    const Vals = Object.values(Obj).sort(function(a, b){return a-b});
+    const EvenVals = [];
+
+    for (var i = 0; i < Vals.length; i += 1) {
+        if (Vals[i]%2 == 0) {
+            EvenVals.push(Vals[i]);
+        }
+    }
+
+    return Math.max(...EvenVals);
 };
 
 
@@ -65,8 +94,8 @@ Exam.value_greatest_even = function () {
 //
 // The username argument should not be set to a default,
 // but the location argument should default to "London".
-Exam.greeting = function () {
-    return;
+Exam.greeting = function (username, location = "London") {
+    return "Hello, " + username + ", how is " + location + "?"
 };
 
 
@@ -77,8 +106,14 @@ Exam.greeting = function () {
 //     offset with a default of 0
 // The function returns the calculation x * scalar + offset for the input x
 // if the output value of the calculation is positive, otherwise it returns 0.
-Exam.floor_line = function () {
-    return;
+Exam.floor_line = function (x, scalar = 1, offset = 0) {
+    const res = x*scalar+offset;
+    const output = 0;
+    if (res >= 0) {
+        output === res;
+    }
+    return output;
+
 };
 
 export default Object.freeze(Exam);

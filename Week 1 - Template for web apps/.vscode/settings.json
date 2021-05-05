@@ -1,0 +1,4 @@
+{
+    "firefox.keepProfileChanges": true,
+    "firefox.profile": "dev-edition-default"
+}
