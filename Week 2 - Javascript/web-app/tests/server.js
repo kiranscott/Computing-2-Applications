@@ -10,14 +10,14 @@ if (recipient === "Trump") {
 }
 
 
-const Salutations = "Hello ";
-let greeting;
-if (recipient === "Trump") {
-    greeting = "Fuck off";
-} else {
-    greeting = Salutations + recipient;
-}
-console.log(greeting);
+//const Salutations = "Hello ";
+//let greeting;
+//if (recipient === "Trump") {
+//    greeting = "Fuck off";
+//} else {
+//    greeting = Salutations + recipient;
+//}
+//console.log(greeting);
 
 
 

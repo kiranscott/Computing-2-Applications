@@ -14,16 +14,21 @@ const Exam = Object.create(null);
 //    for example:
 //      an input list of [1,2,3,4,5,6,7,8]
 //      returns [1,4,7]
+
+// Exam.every_third = function (array) {
+//     var arrayRes = [];
+
+//     for (var i = 0; i < array.length; i += 3) {
+//         arrayRes.push(array[i]);
+//     }
+
+//     return arrayRes;
+// };
+
 Exam.every_third = function (array) {
-    var arrayRes = [];
+    return array.filter((v, k) => k % 3 ===0);
 
-    for (var i = 0; i < array.length; i += 3) {
-        arrayRes.push(array[i]);
-    }
-
-    return arrayRes;
 };
-
 
 // Strings
 
